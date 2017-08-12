@@ -1,8 +1,10 @@
 package com.meirapentermann.jets;
 
+import java.util.ArrayList;
+
 public class JetMenu {
 	private int numOptions;
-	private String[] optionsList;
+	private ArrayList<String> optionsList;
 	
 	
 	/* Two Constructors
@@ -12,12 +14,16 @@ public class JetMenu {
 	public JetMenu() {
 	}
 
-	public JetMenu(String[] arr) {
-//		int temp = arr.length;
-//		String[] tempArr;
-		setNumOptions(arr.length);
-		setOptionsList(arr);
+	public JetMenu(ArrayList<String> aList) {
+		for (int i = 0; i < aList.size(); i++) {
+			if (aList.get(i) == null) {
+				aList.remove(i);
+			}
+		}
+		setNumOptions(aList.size());
+		setOptionsList(aList);
 	}
+	
 
 	public int getNumOptions() {
 		return numOptions;
@@ -27,12 +33,12 @@ public class JetMenu {
 		this.numOptions = numOptions;
 	}
 
-	public String[] getOptionsList() {
+	public ArrayList<String> getOptionsList() {
 		return optionsList;
 	}
 
-	public void setOptionsList(String[] options) {
-		this.optionsList = options;
+	public void setOptionsList(ArrayList<String> aList) {
+		this.optionsList = aList;
 	}
 
 }
