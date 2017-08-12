@@ -57,6 +57,22 @@ public class JetMenu {
 		return num;
 	}
 	
+	public double returnCleanDouble(Scanner sc, String prompt) {
+		System.out.print(prompt);
+		while(!sc.hasNextDouble()) {
+			System.out.print("Enter only a number: ");
+			sc.next();
+		}
+		return sc.nextDouble();
+	}
+	
+	public String returnUserString(Scanner sc, String prompt) {
+		System.out.println(prompt);
+		sc.nextLine();
+		String temp = sc.nextLine();
+		return temp;
+	}
+	
 	public int getNumOptions() {
 		ArrayList<String> aList = getOptionsList();
 		if(aList==null) {
@@ -79,5 +95,17 @@ public class JetMenu {
 		}
 		this.optionsList = aList;
 	}
+	
+	public Jet promptForJetInfo(Scanner sc) {
+		String model = returnUserString(sc, "Enter the Model: ");
+		int speed = returnCleanInt(sc, "Enter the Speed (mph): ");
+		int range = returnCleanInt(sc, "Enter the Range (miles): ");
+		int cap = returnCleanInt(sc, "Enter the Capacity (people): ");
+		double price = returnCleanDouble(sc, "Enter the Price: ");
+		Jet j = new Jet(model, speed, range, cap);
+		j.setPrice(price);
+		return j;
+	}
+	
 
 }

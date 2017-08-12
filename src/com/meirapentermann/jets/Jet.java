@@ -5,6 +5,7 @@ public class Jet {
 	private double speed;
 	private double range;
 	private int capacity;
+	private double price;
 
 	// private Pilot assignedPilot;
 	
@@ -78,6 +79,14 @@ public class Jet {
 
 	public void setCapacity(int capacity) {
 		this.capacity = capacity;
+	}
+	
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
 	}
 
 	@Override

@@ -57,6 +57,12 @@ public class Fleet {
 			return longest;	
 		}
 	}
+	
+	public void appendFleet(Jet j) {
+		ArrayList<Jet> aList = this.getPlanes();
+		aList.add(j);
+		this.setPlanes(aList);
+	}
 
 	@Override
 	public String toString() {

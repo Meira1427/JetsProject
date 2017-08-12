@@ -28,11 +28,11 @@ public class JetsApp {
 			JetMenu menu = new JetMenu(menuOptions);
 			menu.printMenu("* * * * * Java Bean Air * * * * *");
 			choice = menu.returnValidMenuOption(keyboard, -1, menu.getNumOptions());
-			navigateMenu(choice, myFleet);
+			navigateMenu(choice, myFleet, menu, keyboard);
 		}
 	}
 	
-	public static void navigateMenu(int num, Fleet aList) {
+	public static void navigateMenu(int num, Fleet aList, JetMenu menu, Scanner sc) {
 		System.out.println();		
 		switch(num) {
 		case 1:
@@ -48,8 +48,8 @@ public class JetsApp {
 			System.out.println(aList.longestRange());
 			break;
 		case 4:
-			System.out.println("Adding a jet. . . (coming soon)");
-			System.out.println();
+			Jet newJet = menu.promptForJetInfo(sc);
+			aList.appendFleet(newJet);
 			break;
 		case 5:
 			System.out.println("Thank you for choosing Java Bean Air");
