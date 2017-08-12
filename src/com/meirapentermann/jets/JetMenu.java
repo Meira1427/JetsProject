@@ -4,20 +4,16 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class JetMenu {
-	private int numOptions;
 	private ArrayList<String> optionsList;
-	
 	
 	/* Two Constructors
 	 * no-args constructor plus a constructor that takes String array only
-	 * protects from someone entering more options than exist in array
 	 */
 	public JetMenu() {
 	}
 
 	public JetMenu(ArrayList<String> aList) {
 		setOptionsList(aList);
-		setNumOptions(aList.size());
 	}
 	
 	/* Prints ArrayList. 
@@ -50,6 +46,18 @@ public class JetMenu {
 		}
 		return num;
 	}
+	
+	public void navigateMenu(int num, Fleet list) {
+		switch(num) {
+		case 1:
+			
+			break;
+		case 2:
+			
+			break;
+		}
+		
+	}
 
 	public int getNumOptions() {
 		ArrayList<String> aList = getOptionsList();
@@ -59,10 +67,6 @@ public class JetMenu {
 		else {
 			return aList.size();
 		}
-	}
-
-	public void setNumOptions(int numOptions) {
-		this.numOptions = numOptions;
 	}
 
 	public ArrayList<String> getOptionsList() {

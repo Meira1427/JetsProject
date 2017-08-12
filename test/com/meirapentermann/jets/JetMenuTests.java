@@ -11,8 +11,6 @@ public class JetMenuTests {
 	ArrayList<String> options = new ArrayList<String>();
 	ArrayList<String> faulty  = new ArrayList<String>();
 	
-	
-	
 	@Before
 	public void setUp() throws Exception {
 	options.add("Option 1");

@@ -18,11 +18,19 @@ public class JetsApp {
 		menuOptions.add("4. Add Jet to Fleet");
 		menuOptions.add("5. Quit");
 		
+		Jet j1  = new Jet("Test Jet 1", 600, 3000, 30);
+		Jet j2 = new Jet("Test Jet 2", 500, 4000, 200);
+		ArrayList<Jet> jets = new ArrayList<Jet>();
+		jets.add(j1);
+		jets.add(j2);
+		jets.add(null);
+		Fleet myFleet = new Fleet(jets);
+		
 		while(active) {
 			JetMenu menu = new JetMenu(menuOptions);
 			menu.printMenu();
 			choice = menu.returnValidMenuOption(keyboard, -1, menu.getNumOptions());
-			
+			System.out.println(myFleet);
 			active = false;
 		}
 	}

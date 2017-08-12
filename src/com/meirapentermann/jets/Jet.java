@@ -95,7 +95,7 @@ public class Jet {
 		builder.append(range);
 		builder.append(", capacity=");
 		builder.append(capacity);
-		builder.append("]");
+		builder.append("]\n");
 		return builder.toString();
 	}
 
