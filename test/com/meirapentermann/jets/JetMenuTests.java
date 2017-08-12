@@ -20,7 +20,7 @@ public class JetMenuTests {
 	options.add("Option 3");
 	faulty.add("Option 1");
 	faulty.add(null);
-	faulty.add("Option 3");
+	faulty.add("Option 2");
 	menu1 = new JetMenu();
 	menu2 = new JetMenu(options);	
 	menu3 = new JetMenu(faulty);
@@ -41,6 +41,19 @@ public class JetMenuTests {
 		assertEquals(3, menu2.getNumOptions());
 		assertEquals(2, menu3.getNumOptions());
 		
+	}
+	
+	@Test
+	public void test_no_runtime_exceptions_during_print () {
+		try {
+			menu1.printMenu();
+			menu2.printMenu();
+			menu3.printMenu();
+		}
+		catch (Exception e){
+			fail("Should not have thrown an error");
+		}
+	
 	}
 
 }

@@ -24,6 +24,20 @@ public class JetMenu {
 		setOptionsList(aList);
 	}
 	
+	/* Prints ArrayList. There should be no 
+	 * 
+	 */
+	public void printMenu() {
+		if(this.getNumOptions() == 0) {
+			System.out.println("Nothing to Print");
+		}
+		else {
+			ArrayList arr = this.getOptionsList();
+			for (int i = 0; i < arr.size(); i++) {
+				System.out.println(arr.get(i));
+			}
+		}
+	}
 
 	public int getNumOptions() {
 		return numOptions;
