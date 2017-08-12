@@ -9,7 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class FleetTests {
-	Jet j1, j2, j3;
+	Jet j1, j2, j3, j4, j5;
 	Fleet f1, f2;
 	ArrayList<Jet> l1, l2;
 
@@ -18,9 +18,15 @@ public class FleetTests {
 		j1 = new Jet();
 		j2 = new Jet("Test Jet 1", 600, 3000, 30);
 		j3 = new Jet("Test Jet 2", 500, 4000, 200);
+		j4 = new Jet("Test Jet 3", 700, 6000, 200);
+		j5 = new Jet("Test Jet 4", 900, 4000, 200);
+		ArrayList<Jet> l1 = new ArrayList<Jet>();
+		ArrayList<Jet> l2 = new ArrayList<Jet>();
 		l1.add(j1);
 		l1.add(j2);
 		l1.add(j3);
+		l1.add(j4);
+		l1.add(j5);
 		f1 = new Fleet(l1);
 		l2.add(j2);
 		l2.add(j3);
@@ -39,14 +45,14 @@ public class FleetTests {
 	}
 
 	@Test
-	public void test_fastest_in_fleet_returns_j2() {
-		assertEquals(j2, f1.fastestInFleet());
+	public void test_fastest_in_fleet_returns_fastest() {
+		assertEquals(j5, f1.fastestInFleet());
 		assertEquals(j2, f2.fastestInFleet());
 	}
 	
 	@Test
-	public void test_longest_range_in_fleet_returns_j3() {
-		assertEquals(j3, f1.longestRange());
+	public void test_longest_range_in_fleet_returns_longest() {
+		assertEquals(j4, f1.longestRange());
 		assertEquals(j3, f2.longestRange());
 	}
 

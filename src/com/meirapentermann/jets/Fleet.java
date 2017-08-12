@@ -22,15 +22,40 @@ public class Fleet {
 	}
 
 	public void setPlanes(ArrayList<Jet> planes) {
+		for(int i = 0; i < planes.size(); i++) {
+			if (planes.get(i)==null) {
+				planes.remove(i);
+			}
+		}
 		this.planes = planes;
 	}
 	
 	public Jet fastestInFleet() {
-		return null;
+		ArrayList<Jet> aList = this.getPlanes();
+		if(aList.size()==0) {
+			return null;
+		}
+		else {
+			Jet fastest = aList.get(0);
+			for (int i = 1; i < aList.size(); i++) {
+				fastest = aList.get(i).compareSpeedFast(aList.get(i-1));
+			}
+			return fastest;	
+		}
 	}
 	
 	public Jet longestRange() {
-		return null;
+		ArrayList<Jet> aList = this.getPlanes();
+		if(aList.size()==0) {
+			return null;
+		}
+		else {
+			Jet longest = aList.get(0);
+			for (int i = 1; i < aList.size(); i++) {
+				longest = aList.get(i).compareRangeLong(aList.get(i-1));
+			}
+			return longest;	
+		}
 	}
 
 	@Override

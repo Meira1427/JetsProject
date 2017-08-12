@@ -29,6 +29,16 @@ public class JetMenu {
 				System.out.println(arr.get(i));
 			}
 		}
+		System.out.println();
+	}
+	
+	/*overload the print method with option to print header
+	 */
+	
+	public void printMenu(String header) { 
+		System.out.println(header);
+		System.out.println();
+		this.printMenu();
 	}
 	
 	public int returnCleanInt(Scanner sc, String prompt) {
@@ -47,18 +57,6 @@ public class JetMenu {
 		return num;
 	}
 	
-	public void navigateMenu(int num, Fleet list) {
-		switch(num) {
-		case 1:
-			
-			break;
-		case 2:
-			
-			break;
-		}
-		
-	}
-
 	public int getNumOptions() {
 		ArrayList<String> aList = getOptionsList();
 		if(aList==null) {
