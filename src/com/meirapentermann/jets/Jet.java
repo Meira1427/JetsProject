@@ -8,6 +8,11 @@ public class Jet {
 
 	// private Pilot assignedPilot;
 	
+	
+	/*Two Constructors
+	 * no-args constructor
+	 * constructor that takes 4 fields
+	 */
 	public Jet() {
 		super();
 		this.model="Define Model";
@@ -19,6 +24,25 @@ public class Jet {
 		this.speed = speed;
 		this.range = range;
 		this.capacity = capacity;
+	}
+		
+	/* Compares speed of current Jet object with Jet object
+	 * passed as parameter. Returns Jet object with faster
+	 * speed.
+	 */
+	public Jet compareSpeedFast(Jet other) {
+		// TODO Auto-generated method stub
+		return null;								
+	}
+	
+	
+	/* Compares range of current Jet object with Jet object
+	 * passed as parameter. Returns Jet object with longer
+	 * range.
+	 */
+	public Jet compareRangeLong(Jet other) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	public String getModel() {
@@ -53,5 +77,6 @@ public class Jet {
 	public void setCapacity(int capacity) {
 		this.capacity = capacity;
 	}
+
 
 }
