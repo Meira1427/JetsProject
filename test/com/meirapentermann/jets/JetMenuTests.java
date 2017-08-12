@@ -36,7 +36,7 @@ public class JetMenuTests {
 	}
 
 	@Test
-	public void test_get_numOptions_returns_3 () {
+	public void test_get_numOptions_returns_correct_num () {
 		assertEquals(0, menu1.getNumOptions());
 		assertEquals(3, menu2.getNumOptions());
 		assertEquals(2, menu3.getNumOptions());
