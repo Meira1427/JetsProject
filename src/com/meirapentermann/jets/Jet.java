@@ -31,8 +31,9 @@ public class Jet {
 	 * speed.
 	 */
 	public Jet compareSpeedFast(Jet other) {
-		// TODO Auto-generated method stub
-		return null;								
+		Jet answer;
+		answer = (this.getSpeed() > other.getSpeed()) ? this : other;
+		return answer;								
 	}
 	
 	
@@ -41,8 +42,9 @@ public class Jet {
 	 * range.
 	 */
 	public Jet compareRangeLong(Jet other) {
-		// TODO Auto-generated method stub
-		return null;
+		Jet answer;
+		answer = (this.getRange() > other.getRange()) ? this : other;
+		return answer;
 	}
 	
 	public String getModel() {
