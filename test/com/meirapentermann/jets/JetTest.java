@@ -1,7 +1,6 @@
 package com.meirapentermann.jets;
 
 import static org.junit.Assert.*;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,7 +11,7 @@ public class JetTest {
 	@Before
 	public void setUp() throws Exception {
 		j1 = new Jet();
-		j2 = new Jet("Test Jet 1", 600, 5000, 30);
+		j2 = new Jet("Test Jet 1", 600, 3000, 30);
 		j3 = new Jet("Test Jet 2", 500, 4000, 200);
 	}
 
@@ -65,8 +64,8 @@ public class JetTest {
 	}
 	
 	@Test
-	public void test_compare_range_returns_j2 () {
-		assertEquals(j2,j3.compareRangeLong(j2));
-		assertEquals(j2,j2.compareRangeLong(j3));
+	public void test_compare_range_returns_j3 () {
+		assertEquals(j3,j3.compareRangeLong(j2));
+		assertEquals(j3,j2.compareRangeLong(j3));
 	}
 }
