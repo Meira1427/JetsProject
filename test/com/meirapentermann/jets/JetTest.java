@@ -11,8 +11,8 @@ public class JetTest {
 	@Before
 	public void setUp() throws Exception {
 		j1 = new Jet();
-		j2 = new Jet("Test Jet 1", 600, 3000, 30);
-		j3 = new Jet("Test Jet 2", 500, 4000, 200);
+		j2 = new Jet("Test Jet 1", 600, 3000, 30, 35.7);
+		j3 = new Jet("Test Jet 2", 500, 4000, 200, 453.0);
 	}
 
 	@After

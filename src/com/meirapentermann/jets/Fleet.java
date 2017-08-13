@@ -70,6 +70,8 @@ public class Fleet {
 		StringBuilder sb = new StringBuilder("");
 		for (int i = 0; i < aList.size(); i++) {
 			if(!(aList.get(i) == null)) {
+				sb.append(i+1);
+				sb.append(": ");
 				sb.append(aList.get(i));
 			}
 		}

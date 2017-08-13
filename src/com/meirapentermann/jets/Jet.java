@@ -2,8 +2,8 @@ package com.meirapentermann.jets;
 
 public class Jet {
 	private String model;
-	private double speed;
-	private double range;
+	private int speed;
+	private int range;
 	private int capacity;
 	private double price;
 
@@ -19,12 +19,13 @@ public class Jet {
 		this.model="Define Model";
 	}
 	
-	public Jet(String model, double speed, double range, int capacity) {
+	public Jet(String model, int speed, int range, int capacity, double price) {
 		super();
 		this.model = model;
 		this.speed = speed;
 		this.range = range;
 		this.capacity = capacity;
+		this.price = price;
 	}
 		
 	/* Compares speed of current Jet object with Jet object
@@ -57,19 +58,19 @@ public class Jet {
 		this.model = model;
 	}
 
-	public double getSpeed() {
+	public int getSpeed() {
 		return speed;
 	}
 
-	public void setSpeed(double speed) {
+	public void setSpeed(int speed) {
 		this.speed = speed;
 	}
 
-	public double getRange() {
+	public int getRange() {
 		return range;
 	}
 
-	public void setRange(double range) {
+	public void setRange(int range) {
 		this.range = range;
 	}
 
@@ -100,11 +101,13 @@ public class Jet {
 		}
 		builder.append("speed=");
 		builder.append(speed);
-		builder.append(", range=");
+		builder.append(" mph, range=");
 		builder.append(range);
-		builder.append(", capacity=");
+		builder.append(" miles, capacity=");
 		builder.append(capacity);
-		builder.append("]\n");
+		builder.append(", price=");
+		builder.append(price);
+		builder.append(" million]\n");
 		return builder.toString();
 	}
 

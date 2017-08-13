@@ -101,9 +101,8 @@ public class JetMenu {
 		int speed = returnCleanInt(sc, "Enter the Speed (mph): ");
 		int range = returnCleanInt(sc, "Enter the Range (miles): ");
 		int cap = returnCleanInt(sc, "Enter the Capacity (people): ");
-		double price = returnCleanDouble(sc, "Enter the Price: ");
-		Jet j = new Jet(model, speed, range, cap);
-		j.setPrice(price);
+		double price = returnCleanDouble(sc, "Enter the Price (US mill): ");
+		Jet j = new Jet(model, speed, range, cap, price);
 		return j;
 	}
 	
