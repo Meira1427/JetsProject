@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class JetsApp {
 	static boolean active = true;
+	static int userJetChoice = 0;
 
 	public static void main(String[] args) {
 		int choice;
@@ -37,12 +38,13 @@ public class JetsApp {
 		Fleet myFleet = new Fleet(jets);
 		
 		Roster jbRoster = new Roster();
+		jbRoster.hirePilots();
 		jbRoster.assignPilotsToFleet(myFleet);
 		
 		while(active) {
 			JetMenu menu = new JetMenu(menuOptions);
 			menu.printMenu("* * * * * Java Bean Air * * * * *");
-			choice = menu.returnValidMenuOption(keyboard, -1, menu.getNumOptions());
+			choice = menu.returnValidOption(keyboard, -1, menu.getNumOptions(), "Choose a Valid Menu Option: ");
 			navigateMenu(choice, myFleet, menu, keyboard);
 		}
 	}
@@ -67,7 +69,9 @@ public class JetsApp {
 			aList.appendFleet(newJet);
 			break;
 		case 5:
-			System.out.println("Charter a jet. . . coming soon");
+			ArrayList<Jet> jets = aList.getPlanes();
+			userJetChoice = menu.promptForJetChoice(sc, aList);
+			System.out.println("Good choice:\n" + jets.get((userJetChoice-1)));
 			System.out.println();
 			break;
 		case 6:

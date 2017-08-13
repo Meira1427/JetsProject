@@ -50,9 +50,9 @@ public class JetMenu {
 		return sc.nextInt();
 	}
 	
-	public int returnValidMenuOption(Scanner sc, int num, int max) {
+	public int returnValidOption(Scanner sc, int num, int max, String prompt) {
 		while(num<0 || num > max) {
-			num = returnCleanInt(sc, "Choose a Valid Menu Option: ");
+			num = returnCleanInt(sc, prompt);
 		}
 		return num;
 	}
@@ -104,6 +104,12 @@ public class JetMenu {
 		double price = returnCleanDouble(sc, "Enter the Price (US mill): ");
 		Jet j = new Jet(model, speed, range, cap, price);
 		return j;
+	}
+	
+	public int promptForJetChoice(Scanner sc, Fleet f1) {
+		System.out.println(f1);
+		int num = returnValidOption(sc, -1, f1.getPlanes().size(), "Choose a jet: ");
+		return num;
 	}
 	
 

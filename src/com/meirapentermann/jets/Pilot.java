@@ -23,6 +23,15 @@ public class Pilot {
 		this.nickName = nickName;
 	}
 	
+	public Pilot(String firstName, String lastName, String nickName, String prevAirline, String favorite) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.nickName = nickName;
+		this.prevAirline = prevAirline;
+		this.favorite = favorite;
+	}
+
 	public String returnFullName() {
 		StringBuilder sb = new StringBuilder("");
 		String fn = getFirstName();
