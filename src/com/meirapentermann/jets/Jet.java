@@ -6,8 +6,7 @@ public class Jet {
 	private int range;
 	private int capacity;
 	private double price;
-
-	// private Pilot assignedPilot;
+	private Pilot assignedPilot;
 	
 	
 	/*Two Constructors
@@ -62,12 +61,14 @@ public class Jet {
 		return speed;
 	}
 
+
 	public void setSpeed(int speed) {
 		this.speed = speed;
 	}
 
 	public int getRange() {
 		return range;
+
 	}
 
 	public void setRange(int range) {
@@ -90,6 +91,14 @@ public class Jet {
 		this.price = price;
 	}
 
+	public Pilot getPilot() {
+		return assignedPilot;
+	}
+	
+	public void setPilot(Pilot pilot) {
+		this.assignedPilot = pilot;
+	}
+	
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -101,13 +110,20 @@ public class Jet {
 		}
 		builder.append("speed=");
 		builder.append(speed);
-		builder.append(" mph, range=");
+		builder.append(" mph, ");
+		builder.append("range=");
 		builder.append(range);
-		builder.append(" miles, capacity=");
+		builder.append(" miles, ");
+		builder.append("capacity=");
 		builder.append(capacity);
 		builder.append(", price=");
 		builder.append(price);
-		builder.append(" million]\n");
+		builder.append(" million");
+		if (assignedPilot != null) {
+			builder.append(", pilot=");
+			builder.append(assignedPilot);
+		}
+		builder.append("]\n");
 		return builder.toString();
 	}
 

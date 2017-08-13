@@ -59,9 +59,11 @@ public class Fleet {
 	}
 	
 	public void appendFleet(Jet j) {
-		ArrayList<Jet> aList = this.getPlanes();
-		aList.add(j);
-		this.setPlanes(aList);
+		if(!(j==null)) {
+			ArrayList<Jet> aList = this.getPlanes();
+			aList.add(j);
+			this.setPlanes(aList);
+		}
 	}
 
 	@Override

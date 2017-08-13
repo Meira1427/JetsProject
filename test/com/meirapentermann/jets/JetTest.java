@@ -53,6 +53,11 @@ public class JetTest {
 	}
 	
 	@Test
+	public void test_get_price_not_null() {
+		assertNotNull(j1.getPrice());
+	}
+	
+	@Test
 	public void test_get_capacity_0() {
 		assertEquals(0, j1.getCapacity());
 	}

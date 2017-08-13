@@ -16,13 +16,16 @@ public class JetsApp {
 		menuOptions.add("2. View Fastest Jet");
 		menuOptions.add("3. View Jet With Longest Range");
 		menuOptions.add("4. Add Jet to Fleet");
-		menuOptions.add("5. Quit");
+		menuOptions.add("5. Charter a Jet");
+		menuOptions.add("6. Meet your pilot");
+		menuOptions.add("7. Quit");
 	
 		Jet j2 = new Jet("Cessna 444", 690, 4500,  14, 34.9);
 		Jet j1 = new Jet("Boeing 797", 600, 9000, 500, 357.0);
 		Jet j3 = new Jet("Airbus A390", 550, 5000, 400, 428.0);
 		Jet j4 = new Jet("Lockheed W2", 720, 3800, 350, 349.9);
 		Jet j5 = new Jet("Northrup Echo", 475, 5300, 315, 249.9);
+		
 		
 		ArrayList<Jet> jets = new ArrayList<Jet>();
 		jets.add(j1);
@@ -32,6 +35,9 @@ public class JetsApp {
 		jets.add(j5);
 		
 		Fleet myFleet = new Fleet(jets);
+		
+		Roster jbRoster = new Roster();
+		jbRoster.assignPilotsToFleet(myFleet);
 		
 		while(active) {
 			JetMenu menu = new JetMenu(menuOptions);
@@ -61,6 +67,14 @@ public class JetsApp {
 			aList.appendFleet(newJet);
 			break;
 		case 5:
+			System.out.println("Charter a jet. . . coming soon");
+			System.out.println();
+			break;
+		case 6:
+			System.out.println("Meet you pilot. . . coming soon");
+			System.out.println();
+			break;
+		case 7:
 			System.out.println("Thank you for choosing Java Bean Air");
 			active = false;
 			break;
@@ -68,4 +82,5 @@ public class JetsApp {
 			break;
 		}	
 	}
+	
 }
