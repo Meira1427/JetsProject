@@ -35,51 +35,65 @@ public class JetsApp {
 		jets.add(j4);
 		jets.add(j5);
 		
-		Fleet myFleet = new Fleet(jets);
+		Fleet jbFleet = new Fleet(jets);
 		
 		Roster jbRoster = new Roster();
 		jbRoster.hirePilots();
-		jbRoster.assignPilotsToFleet(myFleet);
+		jbRoster.assignPilotsToFleet(jbFleet);
+		
+		JetMenu menu = new JetMenu(menuOptions);
 		
 		while(active) {
-			JetMenu menu = new JetMenu(menuOptions);
+			System.out.println();
 			menu.printMenu("* * * * * Java Bean Air * * * * *");
 			choice = menu.returnValidOption(keyboard, -1, menu.getNumOptions(), "Choose a Valid Menu Option: ");
-			navigateMenu(choice, myFleet, menu, keyboard);
+			navigateMenu(choice, jbFleet, jbRoster, menu, keyboard);
+			if (choice != 7) {
+				System.out.print("Enter c to continue> ");
+				keyboard.next();
+			}
 		}
 	}
 	
-	public static void navigateMenu(int num, Fleet aList, JetMenu menu, Scanner sc) {
+	public static void navigateMenu(int num, Fleet fl1, Roster r1, JetMenu menu, Scanner sc) {
 		System.out.println();		
 		switch(num) {
 		case 1:
 			System.out.println("Java Bean Air's Fleet");
-			System.out.println(aList);
+			System.out.println(fl1);
 			break;
 		case 2:
 			System.out.println("The fastest in our fleet is: ");
-			System.out.println(aList.fastestInFleet());
+			System.out.println(fl1.fastestInFleet());
 			break;
 		case 3:
 			System.out.println("The longest range in our fleet is: ");
-			System.out.println(aList.longestRange());
+			System.out.println(fl1.longestRange());
 			break;
 		case 4:
 			Jet newJet = menu.promptForJetInfo(sc);
-			aList.appendFleet(newJet);
+			newJet.assignPilot(r1);
+			fl1.appendFleet(newJet);
 			break;
 		case 5:
-			ArrayList<Jet> jets = aList.getPlanes();
-			userJetChoice = menu.promptForJetChoice(sc, aList);
+			ArrayList<Jet> jets = fl1.getPlanes();
+			userJetChoice = menu.promptForJetChoice(sc, fl1);
 			System.out.println("Good choice:\n" + jets.get((userJetChoice-1)));
-			System.out.println();
 			break;
 		case 6:
-			System.out.println("Meet you pilot. . . coming soon");
-			System.out.println();
+			if ((userJetChoice - 1) < 0) {
+				System.out.println("You need to charter a jet first.");
+				System.out.println();
+			}
+			else {
+				ArrayList<Jet> j = fl1.getPlanes();
+				Pilot p1 = j.get((userJetChoice-1)).getPilot();
+				p1.printPilotFullInfo();
+			}
 			break;
 		case 7:
-			System.out.println("Thank you for choosing Java Bean Air");
+			System.out.println("*** Thank you for choosing Java Bean Air ***");
+			System.out.println();
 			active = false;
 			break;
 		default:

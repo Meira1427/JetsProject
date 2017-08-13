@@ -51,11 +51,12 @@ public class Roster {
 	public void hirePilots() {
 		Pilot p1 = new Pilot("Johnny", "Farthington", "FoxTrot", "USAF", "Emergency Landings");
 		Pilot p2 = new Pilot("Bob", "DaPlane", "Throw \'em Off", "United", "The Passengers Behave");
-		Pilot p3 = new Pilot("Hugh", "Winston", "Harvard Man", "Delta", "First Class Snacks");
-		Pilot p4 = new Pilot("Billy", "Poteet", "Roll Tide", "Southwest", "Them Little Packets of Prezles");
+		Pilot p3 = new Pilot("Hugh", "Winston", "Harvard Man", "Spirit", "First Class Snacks");
+		Pilot p4 = new Pilot("Billy", "Poteet", "Roll Tide", "Delta", "Them Little Packets of Prezles");
 		Pilot p5 = new Pilot("Joan", "Smith", "That's Right", "Frontier", "We Take Off on Time");
 		Pilot p6 = new Pilot("Jean Luke", "Picard", "Number One", "Starfleet", "We Have Seatbelts on the Bridge");
-		Pilot p7 = new Pilot("Thomas", "Caroll", "the Colonel", "USAF", "We Do Things By the Book");
+		Pilot p7 = new Pilot("George", "Caroll", "the Colonel", "USAF", "We Do Things By the Book");
+		Pilot p8 = new Pilot("Thomas", "Cruisin", "Top Gun", "Southwest", "Feel the Need for Speed");
 		ArrayList<Pilot> pilots = new ArrayList<Pilot>();
 		pilots.add(p1);
 		pilots.add(p2);
@@ -64,7 +65,19 @@ public class Roster {
 		pilots.add(p5);
 		pilots.add(p6);
 		pilots.add(p7);
+		pilots.add(p8);
 		this.setpList(pilots);
+	}
+	
+	public Pilot returnMatch(String name) {
+		ArrayList<Pilot> pilots = this.getpList();
+		Pilot p = new Pilot("No Match", "Found");
+		for (int i = 0; i < pilots.size(); i++) {
+			if (pilots.get(i).toString().equals(name)) {
+				p = pilots.get(i);
+			}
+		}
+		return p;
 	}
 
 }

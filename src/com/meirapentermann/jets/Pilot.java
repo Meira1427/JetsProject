@@ -5,7 +5,6 @@ public class Pilot {
 	private String lastName;
 	private String nickName;
 	private String prevAirline;
-	private String pilotBio;
 	private String favorite;
 	private boolean assigned;
 	
@@ -52,6 +51,18 @@ public class Pilot {
 		}
 		return sb.toString();
 	}
+	
+	public void printPilotFullInfo () {
+		System.out.println("* * * * * * *  Your  Pilot  * * * * * * *");
+		System.out.println();
+		System.out.println("  " + this.returnFullName());
+		System.out.println("  " + "Previous Airline: " + this.getPrevAirline());
+		System.out.println("  " + "Favorite Thing About Java Bean Air:");
+		System.out.println("    " + this.getFavorite());
+		System.out.println();
+		System.out.println("* * * * * * * * * * * * * * * * * * * * *");
+		System.out.println();
+	}
 
 	public String getFirstName() {
 		return firstName;
@@ -83,14 +94,6 @@ public class Pilot {
 
 	public void setPrevAirline(String prevAirline) {
 		this.prevAirline = prevAirline;
-	}
-
-	public String getPilotBio() {
-		return pilotBio;
-	}
-
-	public void setPilotBio(String pilotBio) {
-		this.pilotBio = pilotBio;
 	}
 	
 	public String getFavorite() {

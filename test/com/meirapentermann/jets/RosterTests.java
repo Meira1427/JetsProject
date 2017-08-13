@@ -21,19 +21,19 @@ public class RosterTests {
 		p1 = new Pilot("Joe", "Smith", "the Glider");
 		p2 = new Pilot("New", "Pilot", "the Nickname");
 		p3 = new Pilot("Tom", "Jones");
-		ArrayList<Pilot> pilots = new ArrayList<Pilot>();
+		pilots = new ArrayList<Pilot>();
 		pilots.add(p1);
 		pilots.add(p2);
 		pilots.add(p3);
-		Roster r1 = new Roster(pilots);
+		r1 = new Roster(pilots);
 		j1 = new Jet("Test Jet 1", 400, 2500, 200, 100.0);
 		j2 = new Jet("Test Jet 2", 600, 3000, 30, 50.0);
 		j3 = new Jet("Test Jet 3", 500, 4000, 200, 300.0);
-		ArrayList<Jet> l1 = new ArrayList<Jet>();
+		l1 = new ArrayList<Jet>();
 		l1.add(j1);
 		l1.add(j2);
 		l1.add(j3);
-		Fleet f1 = new Fleet(l1);
+		f1 = new Fleet(l1);
 	}
 
 	@After

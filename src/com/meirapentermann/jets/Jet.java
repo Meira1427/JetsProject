@@ -1,5 +1,7 @@
 package com.meirapentermann.jets;
 
+import java.util.ArrayList;
+
 public class Jet {
 	private String model;
 	private int speed;
@@ -48,10 +50,29 @@ public class Jet {
 		return answer;
 	}
 	
+	/* If there are pilots available, assign one
+	 * Otherwise set pilot name to "Pilot to Hire"
+	 */
+	public void assignPilot(Roster r1) {
+		ArrayList<Pilot> pilots = r1.getpList();
+		boolean found = false;
+		for (int i = 0; i < pilots.size(); i++) {
+			if(pilots.get(i).getAssigned() == false) {
+				this.setPilot(pilots.get(i));
+				pilots.get(i).setAssigned(true);
+				found = true;
+				break;
+			}
+		}
+		if (!found){
+			Pilot p = new Pilot("Pilot", "to Hire");
+			this.setPilot(p);
+		}
+	}
+	
 	public String getModel() {
 		return model;
 	}
-
 
 	public void setModel(String model) {
 		this.model = model;
@@ -60,7 +81,6 @@ public class Jet {
 	public int getSpeed() {
 		return speed;
 	}
-
 
 	public void setSpeed(int speed) {
 		this.speed = speed;
