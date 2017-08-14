@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Jet {
 	private String model;
-	private int speed;
+	private double speed;
 	private int range;
 	private int capacity;
 	private double price;
@@ -20,7 +20,7 @@ public class Jet {
 		this.model="Define Model";
 	}
 	
-	public Jet(String model, int speed, int range, int capacity, double price) {
+	public Jet(String model, double speed, int range, int capacity, double price) {
 		super();
 		this.model = model;
 		this.speed = speed;
@@ -78,11 +78,11 @@ public class Jet {
 		this.model = model;
 	}
 
-	public int getSpeed() {
+	public double getSpeed() {
 		return speed;
 	}
 
-	public void setSpeed(int speed) {
+	public void setSpeed(double speed) {
 		this.speed = speed;
 	}
 
@@ -130,7 +130,7 @@ public class Jet {
 		}
 		builder.append("speed=");
 		builder.append(speed);
-		builder.append(" mph, ");
+		builder.append(" mach, ");
 		builder.append("range=");
 		builder.append(range);
 		builder.append(" miles, ");

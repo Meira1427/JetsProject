@@ -15,14 +15,12 @@ public class FleetTests {
 
 	@Before
 	public void setUp() throws Exception {
-		j1 = new Jet();
-		j2 = new Jet("Test Jet 1", 600, 3000, 30, 50.0);
-		j3 = new Jet("Test Jet 2", 500, 4000, 200, 300.0);
-		j4 = new Jet("Test Jet 3", 700, 6000, 200, 500.0);
-		j5 = new Jet("Test Jet 4", 900, 4000, 200, 450.0);
+		j2 = new Jet("Test Jet 1", .65, 3000, 30, 50.0);
+		j3 = new Jet("Test Jet 2", .39, 4000, 200, 300.0);
+		j4 = new Jet("Test Jet 3", .4, 6000, 200, 500.0);
+		j5 = new Jet("Test Jet 4", 1.2, 4000, 200, 450.0);
 		ArrayList<Jet> l1 = new ArrayList<Jet>();
 		ArrayList<Jet> l2 = new ArrayList<Jet>();
-		l1.add(j1);
 		l1.add(j2);
 		l1.add(j3);
 		l1.add(j4);

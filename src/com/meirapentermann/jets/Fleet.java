@@ -5,6 +5,9 @@ import java.util.ArrayList;
 public class Fleet {
 	private ArrayList<Jet> planes;
 	
+	/*
+	 * Constructors
+	 */
 	public Fleet() {
 	}
 
@@ -16,6 +19,10 @@ public class Fleet {
 		}
 		this.planes = planes;
 	}
+	
+	/*
+	 * Getters & Setters
+	 */
 
 	public ArrayList<Jet> getPlanes() {
 		return planes;
@@ -29,6 +36,10 @@ public class Fleet {
 		}
 		this.planes = planes;
 	}
+	
+	/*
+	 * Calculates fastest plane in fleet
+	 */
 	
 	public Jet fastestInFleet() {
 		ArrayList<Jet> aList = this.getPlanes();
@@ -44,6 +55,10 @@ public class Fleet {
 		}
 	}
 	
+	/*
+	 * Calculates plane in fleet with longest range
+	 */
+	
 	public Jet longestRange() {
 		ArrayList<Jet> aList = this.getPlanes();
 		if(aList.size()==0) {
@@ -58,6 +73,9 @@ public class Fleet {
 		}
 	}
 	
+	/*
+	 * appends the ArrayList<Jet> to add a new plane
+	 */
 	public void appendFleet(Jet j) {
 		if(!(j==null)) {
 			ArrayList<Jet> aList = this.getPlanes();
@@ -66,6 +84,9 @@ public class Fleet {
 		}
 	}
 
+	/*
+	 * Adds numbers as it prints out fleet, so user can choose
+	 */
 	@Override
 	public String toString() {
 		ArrayList<Jet> aList = this.getPlanes();

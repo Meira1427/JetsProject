@@ -52,6 +52,10 @@ public class Pilot {
 		return sb.toString();
 	}
 	
+	/*
+	 * To be used when user asks about Pilot of Jet he/she chartered
+	 */
+	
 	public void printPilotFullInfo () {
 		System.out.println("* * * * * * *  Your  Pilot  * * * * * * *");
 		System.out.println();
@@ -63,6 +67,10 @@ public class Pilot {
 		System.out.println("* * * * * * * * * * * * * * * * * * * * *");
 		System.out.println();
 	}
+	
+	/*
+	 * Getters & Setters
+	 */
 
 	public String getFirstName() {
 		return firstName;

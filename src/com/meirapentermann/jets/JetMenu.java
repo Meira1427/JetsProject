@@ -41,6 +41,11 @@ public class JetMenu {
 		this.printMenu();
 	}
 	
+	/*
+	 * For interacting with the user and getting valid
+	 * information (int, double, string) from user
+	 */
+	
 	public int returnCleanInt(Scanner sc, String prompt) {
 		System.out.print(prompt);
 		while(!sc.hasNextInt()) {
@@ -73,6 +78,10 @@ public class JetMenu {
 		return temp;
 	}
 	
+	
+	/*
+	 * Getters & Setters
+	 */
 	public int getNumOptions() {
 		ArrayList<String> aList = getOptionsList();
 		if(aList==null) {
@@ -96,21 +105,35 @@ public class JetMenu {
 		this.optionsList = aList;
 	}
 	
+	/*
+	 * Since my methods for prompting user for clean int, double, etc
+	 * are in this class,this seemed like a good place to put the prompting 
+	 * for info on new Jet to add to fleet. 
+	 * Takes info from user w/ Scanner. Converts mph to mach and rounds. 
+	 * Returns a Jet.
+	 */
+	
 	public Jet promptForJetInfo(Scanner sc) {
 		String model = returnUserString(sc, "Enter the Model: ");
 		int speed = returnCleanInt(sc, "Enter the Speed (mph): ");
 		int range = returnCleanInt(sc, "Enter the Range (miles): ");
 		int cap = returnCleanInt(sc, "Enter the Capacity (people): ");
 		double price = returnCleanDouble(sc, "Enter the Price (US mill): ");
-		Jet j = new Jet(model, speed, range, cap, price);
+		double speedM = speed*.00130332;
+		speedM = Math.floor(speedM*100)/100;
+		Jet j = new Jet(model, speedM, range, cap, price);
 		return j;
 	}
 	
+	
+	/*
+	 * prompts user to choose a jet from list using number.
+	 * Returns int, a valid user choice.
+	 */
 	public int promptForJetChoice(Scanner sc, Fleet f1) {
 		System.out.println(f1);
 		int num = returnValidOption(sc, -1, f1.getPlanes().size(), "Choose a jet: ");
 		return num;
 	}
 	
-
 }
